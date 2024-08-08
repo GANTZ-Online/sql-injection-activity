@@ -36,6 +36,7 @@ app.post('/login', (req, res) => {
   // SQL query to check credentials - vulnerable to SQL injection
   let query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";
   console.log(`SQL Query: {query}`);
+  //unknown' OR '1'='1
 
   // Execute the query
   db.get(query, function (err, row) {
